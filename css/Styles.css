@@ -1,0 +1,998 @@
+@import url('https://fonts.googleapis.com/css?family=Didact+Gothic');
+
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #ffd700;
+    --text-color: #666;
+    --background-color: #f5f5f5;
+    --white: #fff;
+    --shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header h1:first-child {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+body, html {
+    font-family: 'Didact Gothic', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+header {
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    padding: 1rem 0;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+.cta-button, .button-yellow, .button-blue {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cta-button, .button-blue {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+.button-yellow {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+.cta-button:hover, .button-blue:hover {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+.button-yellow:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 3rem 0;
+}
+
+.hero-image{
+    display: flex;
+    flex-wrap: wrap;
+}
+.hero-content, .hero-image {
+    flex: 1 1 300px;
+}
+
+.hero h1 {
+    color: var(--primary-color);
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    margin-bottom: 1.5rem;
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+footer {
+    background-color: var(--background-color);
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--white);
+    min-width: 160px;
+    box-shadow: var(--shadow);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: var(--text-color);
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--background-color);
+}
+
+.dropdown-content a img {
+    margin-right: 0.5rem;
+    vertical-align: middle;
+}
+
+.gallery-section {
+    padding: 3rem 0;
+}
+
+.gallery-section h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        margin-top: 1rem;
+    }
+
+    .hero {
+        flex-direction: column;
+    }
+
+    .hero-content, .hero-image {
+        padding-right: 0;
+    }
+
+    .dropdown-content {
+        position: static;
+        display: none;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+.text-center {
+    text-align: center;
+}
+.plan-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 40px;
+  }
+  
+  .plan {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .plan h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .plan p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  .plan-button {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  
+  .plan-button:hover {
+    background-color: #555;
+  }
+  
+  .plan h3 {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #444;
+  }
+  
+  .plan ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .plan ul li {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  .intro {
+    padding: 40px 0;
+    background-color: #f5f5f5; 
+}
+
+.intro-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.intro-text {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.intro-text h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.intro-text p {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #666;
+}
+
+.intro-image-container {
+    flex: 1;
+    text-align: right;
+}
+
+.intro-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.language-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    display: flex;
+}
+section h1{
+    background-color: rgb(63, 113, 252);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px auto;
+    width: 80%;
+}
+
+.curso{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    border: 1px solid black;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    padding: 10px;
+    margin: 10px auto;
+}
+
+.curso img{
+    height: auto;
+    float: left;
+    width: 15%;
+    max-width: 100px;
+    margin: 10px;
+}
+
+.curso h3{
+    margin: 0;
+    line-height: 1.5;
+    font-weight: bolder;
+    font-size: 20px;
+    color: black;
+}
+
+.curso p{
+    margin-top: 0px;
+    line-height: 1.5;
+    text-decoration: underline;
+}
+
+.curso a{
+    float: right;
+    margin: 10px;
+    color: white;
+    background-color: blue;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.curso a:hover{
+    background-color: rgb(255, 196, 1);
+}
+
+@import url('https://fonts.googleapis.com/css?family=Didact+Gothic');
+
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #ffd700;
+    --text-color: #666;
+    --background-color: #f5f5f5;
+    --white: #fff;
+    --shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header h1:first-child {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+body, html {
+    font-family: 'Didact Gothic', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+header {
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    padding: 1rem 0;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+.cta-button, .button-yellow, .button-blue {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cta-button, .button-blue {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.button-yellow {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+.cta-button:hover, .button-blue:hover {
+    background-color: darken(var(--primary-color), 10%);
+}
+
+.button-yellow:hover {
+    background-color: darken(var(--secondary-color), 10%);
+}
+
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 3rem 0;
+}
+
+.hero-content, .hero-image {
+    flex: 1 1 300px;
+}
+
+.hero h1 {
+    color: var(--primary-color);
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    margin-bottom: 1.5rem;
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+footer {
+    background-color: var(--background-color);
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--white);
+    min-width: 160px;
+    box-shadow: var(--shadow);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: var(--text-color);
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--background-color);
+}
+
+.dropdown-content a img {
+    margin-right: 0.5rem;
+    vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        margin-top: 1rem;
+    }
+
+    .hero {
+        flex-direction: column;
+    }
+
+    .hero-content, .hero-image {
+        padding-right: 0;
+    }
+
+    .dropdown-content {
+        position: static;
+        display: none;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+}
+
+
+section.cuerpo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+}
+
+article.Informacion{
+    display: flex;
+    flex-wrap: wrap;   
+    width: 100%;
+}
+
+article.Informacion h1{
+    font-size: 50px;
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+    color: rgb(63, 113, 252);
+}
+
+div.caja{
+    background-color: rgb(255, 254, 239);
+    border: 2px solid black;
+    width: 40%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+div.caja img{
+    border: 1px solid black;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Didact+Gothic');
+
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #ffd700;
+    --text-color: #666;
+    --background-color: #f5f5f5;
+    --white: #fff;
+    --shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header h1:first-child {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+body, html {
+    font-family: 'Didact Gothic', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+header {
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    padding: 1rem 0;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+.cta-button, .button-yellow, .button-blue {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cta-button, .button-blue {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.button-yellow {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+.cta-button:hover, .button-blue:hover {
+    background-color: darken(var(--primary-color), 10%);
+}
+
+.button-yellow:hover {
+    background-color: darken(var(--secondary-color), 10%);
+}
+
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 3rem 0;
+}
+
+.hero-content, .hero-image {
+    flex: 1 1 300px;
+}
+
+.hero h1 {
+    color: var(--primary-color);
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    margin-bottom: 1.5rem;
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+footer {
+    background-color: var(--background-color);
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--white);
+    min-width: 160px;
+    box-shadow: var(--shadow);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: var(--text-color);
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--background-color);
+}
+
+.dropdown-content a img {
+    margin-right: 0.5rem;
+    vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        margin-top: 1rem;
+    }
+
+    .hero {
+        flex-direction: column;
+    }
+
+    .hero-content, .hero-image {
+        padding-right: 0;
+    }
+
+    .dropdown-content {
+        position: static;
+        display: none;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+}
+.testimonios-section {
+    text-align: center;
+}
+
+.testimonios-section h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.testimonios {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.testimonial {
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.testimonial img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    object-fit: cover;
+    box-shadow: var(--shadow);
+}
+
+.testimonial p {
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.5;
+    margin-top: 1rem;
+}
+
+.testimonial:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+form {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+  }
+
+  input[type="text"], input[type="tel"], input[type="email"] {
+    width: 98%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+  }
+
+  select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  .checkbox-wrapper {
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  
+  .checkbox-wrapper input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  .checkbox-wrapper p {
+    display: inline-block;
+    font-size: 16px;
+  }
+
+  button[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  #nombre, #apellido, #telefono, #correo, select, .checkbox-wrapper {
+    margin-bottom: 20px;
+  }
+  .sobre-nosotros h2 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.sobre-nosotros h3 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-align: left;
+    border-left: 4px solid var(--secondary-color);
+    padding-left: 0.5rem;
+}
+
+.sobre-nosotros p {
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.sobre-nosotros ul {
+    list-style-type: disc;
+    margin-left: 2rem;
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.8;
+}
+
+.sobre-nosotros ul li {
+    margin-bottom: 0.75rem;
+}
+
+.sobre-nosotros ul li::marker {
+    color: var(--secondary-color);
+}
+
+
+section.cuerpo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+}
+
+article.Informacion{
+    display: flex;
+    flex-wrap: wrap;   
+    width: 100%;
+}
+
+article.Informacion h1{
+    font-size: 50px;
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+    color: rgb(63, 113, 252);
+}
+
+div.caja{
+    background-color: rgb(255, 254, 239);
+    border: 2px solid black;
+    width: 40%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+div.caja img{
+    border: 1px solid black;
+}
+

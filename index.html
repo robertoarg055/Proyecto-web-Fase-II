@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drakukeos Academy</title>
+    <link rel="stylesheet" href="css/Styles.css">
+</head>
+<body>
+<header>
+    <div class="container">
+        <nav>
+            <h1>Drakukeos Academy</h1>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="html/planes.html">Planes</a></li>
+                <li><a href="#gallery">Galeria</a></li>
+                <li><a href="html/testimonios.html">Testimonios</a></li>
+                <li><a href="html/sobre_nosotros.html">Sobre nosotros</a></li>
+                <li><a href="html/contacto.html">Contacto</a></li>
+                <li class="dropdown">
+                    <a href="html/Cursos.html">Idiomas</a>
+                    <div class="dropdown-content">
+                        <a href="html/Cursos.html"> Inglés</a>
+                        <a href="html/Cursos.html"> Francés</a>
+                        <a href="html/Cursos.html"> Italiano</a>
+                        <a href="html/Cursos.html">  Portugués</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<main>
+    <div class="container hero">
+        <div class="hero-content">
+            <h1>La mejor manera de Aprender Inglés</h1>
+            <p>Aprender inglés fácil y rápido, en línea o en persona, en la casa o en el aula, grupal o individual, un sábado o entre semana es sencillo en nuestra Academia. Estudiar para Aprender Inglés te abre múltiples oportunidades de desarrollo. Clases de Inglés en El Salvador como tú decidas.</p>
+            <div class="button-group">
+                <a href="#" class="button-yellow">AD Virtual Class</a>
+                <a href="#" class="button-blue">AD Presencial</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="img/alumno.webp" alt="Estudiantes aprendiendo" width="500" height="300">
+        </div>
+    </div>
+
+    <div class="container gallery-section" id="gallery">
+        <h2>Nuestra Galería</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="img/si.webp" alt="Imagen 1">
+            </div>
+            <div class="gallery-item">
+                <img src="img/xd.webp" alt="Imagen 2">
+            </div>
+            <div class="gallery-item">
+                <img src="img/alumnos.webp" alt="Imagen 3">
+            </div>
+            <div class="gallery-item">
+                <img src="img/xddd.webp" alt="Imagen 4">
+            </div>
+            <div class="gallery-item">
+                <img src="img/levi.webp" alt="Imagen 5">
+            </div>
+            <div class="gallery-item">
+                <img src="img/jaja.webp" alt="Imagen 6">
+            </div>
+            <div class="gallery-item">
+                <img src="img/prof.webp" alt="Imagen 7">
+            </div>
+            <div class="gallery-item">
+                <img src="img/ci.webp" alt="Imagen 8">
+            </div>
+        </div>
+    </div>
+    <form action="mensaje_formulario.html" method="post">
+        <h1> Contáctanos</h1>
+        <fieldset id="logindato"> 
+            
+            <input type="text" id="nombre" value="" pattern="^[a-zA-Z\s]+$" 
+            title="Solo se acepta letras" class="control" placeholder="Nombre"
+            required/> <br>
+
+            <input type="text" id="apellido" value="" pattern="^[a-zA-Z\s]+$" 
+            title="Solo se acepta letras" class="control" placeholder="Apellido"
+            required/> <br>
+          
+            <input type="tel" id="telefono" value="" pattern="^[0-9]{4}-?[0-9]{4}$"
+            title="Solo se acepta números en el siguiente formato: 2222-2222" class="control"
+            placeholder="Número de teléfono" required> <br>
+            
+            <input type="email" id="correo" value="" title="Formato de correo: NombreCorreo@dominio" class="control"
+            placeholder="Correo Electrónico" required> <br>
+
+            <label for="lang">Idiomas:</label>
+            <select name="Lenguajes" id="lang" aria-placeholder="selecciona el idioma: ">
+                <option value="ingles">Inglés</option>
+                <option value="aleman">Alemán</option>
+                <option value="frances">Francés</option>
+
+            </select> <br>
+
+            <span class="checkbox-wrapper"> 
+                <input type="checkbox" value="Acepto" class="terminos">
+                <p class="terminos"> Al enviar mis datos, acepto ser contactado</p>
+            </span> <br>
+
+            <button id="boton" type="submit"> Enviar mis datos </button>
+        </fieldset>
+    </form>
+</main>
+<footer>
+    <div class="container">
+        <p>Copyright © 2024 Drakukeos Academy. Todos los derechos reservados.</p>
+    </div>
+</footer>
+</body>
+</html>
