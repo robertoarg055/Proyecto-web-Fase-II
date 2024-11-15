@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creación y Modificación de Cursos</title>
+    <link rel="stylesheet" href="../css/admin_cursos.css">
+</head>
+
+<body>
+    <header>
+        <div class="encabezado">
+            <div class="banderas1">
+                <img src="../img/usa.png" alt="Bandera USA">
+                <img src="../img/france.png" alt="Bandera Francia">
+            </div>
+            <h1>Drakukeos Academy</h1>
+            <div class="banderas2">
+                <img src="../img/portugal.png" alt="Bandera Portugal">
+                <img src="../img/italia.png" alt="Bandera Italia">
+            </div>
+        </div>
+        <h3>Academia de idiomas #1 del mundo</h3>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="form-container">
+                <h2>Crear o Modificar Curso</h2>
+                <form id="formulario">
+                    <div class="Casilla">
+                        <label for="nombreCurso">Nombre del Curso:</label>
+                        <input type="text" id="nombreCurso" placeholder="Nombre del curso">
+                    </div>
+                    <div class="Casilla">
+                        <label for="idioma">Idioma:</label>
+                        <select id="idioma">
+                            <option value="">Selecciona un idioma</option>
+                            <option>Inglés</option>
+                            <option>Francés</option>
+                            <option>Español</option>
+                            <option>Italiano</option>
+                        </select>
+                    </div>
+                    <div class="Casilla">
+                        <label for="nivel">Nivel:</label>
+                        <select id="nivel">
+                            <option value="">Selecciona un nivel</option>
+                            <option>A1</option>
+                            <option>A2</option>
+                            <option>B1</option>
+                            <option>B2</option>
+                            <option>C1</option>
+                            <option>C2</option>
+                        </select>
+                    </div>
+                    <div class="Casilla">
+                        <label for="duracion">Duración (en semanas):</label>
+                        <input type="number" id="duracion" placeholder="Ej: 4, 8, 12">
+                    </div>
+                    <button type="submit" class="btn-submit">Crear Curso</button>
+                    <button type="button" class="btn-submit" id="modificarCurso">Modificar Curso</button>
+                </form>
+            </div>
+            <div class="Cursos activos">
+                <h2>Cursos Activos</h2>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

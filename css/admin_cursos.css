@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css?family=Didact+Gothic');
+
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #ffd700;
+    --text-color: #666;
+    --background-color: #f5f5f5;
+    --white: #fff;
+    --shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-image: url('img/Mapa_mundi_blanco.PNG'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    width: 100%;
+    background-color: white; 
+    color: #368ff5;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.encabezado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 50px; 
+}
+
+.banderas1, .banderas2 {
+    display: flex;
+    justify-content: center;
+}
+
+.banderas1 img, .banderas2 img {
+    width: 60px; 
+    height: auto;
+    margin: 0 15px; 
+}
+
+h1 {
+    margin: 0 20px; 
+    font-size: 28px;
+    color: #368ff5;
+}
+
+h3 {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+main {
+    padding: 50px 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #3d71ff;
+}
+
+.form-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; 
+}
+
+.Casilla {
+    margin-bottom: 15px;
+}
+
+.Casilla label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.Casilla input, .Casilla select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.btn-submit {
+    background-color: #2f82ff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background-color: #1000e9;
+}
+
+.Cursos.activos {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; 
+}
+
+.Cursos.activos h2 {
+    margin-bottom: 15px;
+    text-align: center;
+}
