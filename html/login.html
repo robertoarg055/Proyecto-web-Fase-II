@@ -1,85 +1,74 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/login.css">
-    <title>Login</title>
+    <title>Login - Drakukeos Academy</title>
+
 </head>
-
 <body>
-    <header>
-        <div class="encabezado">
-            <div class="banderas1">
-                <img src="../img/usa.png" alt="Bandera USA">
-                <img src="../img/france.png" alt="Bandera Francia">
-            </div>
-            <h1>Drakukeos Academy</h1>
-            <div class="banderas2">
-                <img src="../img/portugal.png" alt="Bandera Portugal">
-                <img src="../img/italia.png" alt="Bandera Italia">
-            </div>
+<header>
+    <div class="encabezado">
+        <div class="banderas1">
+            <img src="../img/usa.png" alt="Bandera USA">
+            <img src="../img/france.png" alt="Bandera Francia">
         </div>
-        <h3>Academia de idiomas #1 del mundo</h3>
-    </header>
-    <div class="container">
-        <h2>Inicio de Sesión</h2>
-        <div class="tabs">
-            <button class="tab-btn active" onclick="showLogin('estudiantes')">Estudiantes</button>
-            <button class="tab-btn" onclick="showLogin('maestros')">Maestros</button>
-            <button class="tab-btn" onclick="showLogin('admin')">Admin</button>
+        <h1>Drakukeos Academy</h1>
+        <div class="banderas2">
+            <img src="../img/portugal.png" alt="Bandera Portugal">
+            <img src="../img/italia.png" alt="Bandera Italia">
         </div>
-        <form id="login-estudiantes" class="login-form" action="login.html" method="post">
-            <input type="text" name="username" placeholder="Usuario" required>
-            <input type="password" name="password" placeholder="Contraseña" required>
-            <button type="submit">Ingresar</button>
-        </form>
-        <form id="login-maestros" class="login-form hidden" action="profesor.html" method="post">
-            <input type="text" name="username" placeholder="Usuario" required>
-            <input type="password" name="password" placeholder="Contraseña" required>
-            <button type="submit">Ingresar</button>
-        </form>
-        <form id="login-admin" class="login-form hidden" action="admin_cursos.html" method="post">
-            <input type="text" name="username" placeholder="Usuario" required>
-            <input type="password" name="password" placeholder="Contraseña" required>
-            <button type="submit">Ingresar</button>
-        </form>
     </div>
-    <script type="module">
-        import { auth, db } from '../js/firebase.js';
-        import { handleLogin } from '../js/auth.js';
-        document.addEventListener('DOMContentLoaded', () => {
-            const loginForms = {
-                estudiantes: document.getElementById('login-estudiantes'),
-                maestros: document.getElementById('login-maestros'),
-                admin: document.getElementById('login-admin')
-            };
+    <h3>Academia de idiomas #1 del mundo</h3>
+</header>
+<div class="container">
+    <h2>Inicio de Sesión</h2>
+    <div class="tabs">
+        <button class="tab-btn active" onclick="showLogin('estudiantes')">Estudiantes</button>
+        <button class="tab-btn" onclick="showLogin('maestros')">Maestros</button>
+        <button class="tab-btn" onclick="showLogin('admin')">Admin</button>
+    </div>
+    <div id="error-message" class="error-message"></div>
 
-            window.showLogin = (type) => {
-                Object.values(loginForms).forEach(form => form.classList.add('hidden'));
-                loginForms[type].classList.remove('hidden');
+    <!-- Formulario para Estudiantes -->
+    <form id="login-estudiantes" class="login-form" action="estudiante.html" method="POST">
+        <input type="email" id="email" name="username" placeholder="Correo electrónico" required>
+        <input type="password" id="password" name="password" placeholder="Contraseña" required>
+        <button type="submit">Ingresar</button>
+    </form>
 
-                document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-                document.querySelector(`[onclick="showLogin('${type}')"]`).classList.add('active');
-            };
+    <!-- Formulario para Maestros -->
+    <form id="login-maestros" class="login-form hidden" action="profesor.html" method="POST">
+        <input type="email" id="email-maestro" name="username" placeholder="Correo electrónico" required>
+        <input type="password" id="password-maestro" name="password" placeholder="Contraseña" required>
+        <button type="submit">Ingresar</button>
+    </form>
 
-            Object.entries(loginForms).forEach(([type, form]) => {
-                form.addEventListener('submit', async (e) => {
-                    e.preventDefault();
-                    const email = form.querySelector('[name="username"]').value;
-                    const password = form.querySelector('[name="password"]').value;
-                    const role = type === 'estudiantes' ? 'student' : type === 'maestros' ? 'teacher' : 'admin';
+    <!-- Formulario para Admin -->
+    <form id="login-admin" class="login-form hidden" action="admin_cursos.html" method="POST">
+        <input type="email" id="email-admin" name="username" placeholder="Correo electrónico" required>
+        <input type="password" id="password-admin" name="password" placeholder="Contraseña" required>
+        <button type="submit">Ingresar</button>
+    </form>
+</div>
 
-                    const error = await handleLogin(email, password, role);
-                    if (error) {
-                        alert(error);
-                    }
-                });
-            });
+<script>
+    function showLogin(role) {
+        // Ocultar todos los formularios
+        document.querySelectorAll('.login-form').forEach(form => {
+            form.classList.add('hidden');
         });
-    </script>
-</body>
 
+        // Mostrar el formulario correspondiente
+        document.getElementById(`login-${role}`).classList.remove('hidden');
+    }
+
+    // Mostrar el formulario de estudiantes por defecto al cargar la página
+    document.addEventListener('DOMContentLoaded', () => {
+        showLogin('estudiantes');
+    });
+</script>
+</body>
 </html>
