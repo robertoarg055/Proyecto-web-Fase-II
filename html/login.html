@@ -47,10 +47,39 @@
             <button type="submit">Ingresar</button>
         </form>
     </div>
-    <script type="module" src="../js/login.js"></script>
-    <script type="module" src="../js/firebase.js"></script>
+    <script type="module">
+        import { auth, db } from '../js/firebase.js';
+        import { handleLogin } from '../js/auth.js';
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginForms = {
+                estudiantes: document.getElementById('login-estudiantes'),
+                maestros: document.getElementById('login-maestros'),
+                admin: document.getElementById('login-admin')
+            };
 
-    <script type="module" src="../js/auth.js"></script>
+            window.showLogin = (type) => {
+                Object.values(loginForms).forEach(form => form.classList.add('hidden'));
+                loginForms[type].classList.remove('hidden');
+
+                document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                document.querySelector(`[onclick="showLogin('${type}')"]`).classList.add('active');
+            };
+
+            Object.entries(loginForms).forEach(([type, form]) => {
+                form.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    const email = form.querySelector('[name="username"]').value;
+                    const password = form.querySelector('[name="password"]').value;
+                    const role = type === 'estudiantes' ? 'student' : type === 'maestros' ? 'teacher' : 'admin';
+
+                    const error = await handleLogin(email, password, role);
+                    if (error) {
+                        alert(error);
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

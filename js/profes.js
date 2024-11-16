@@ -1,5 +1,5 @@
+import { collection, query, where, getDocs, doc, getDoc } from 'https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js';
 import { db } from './firebase.js';
-import { collection, query, where, getDocs } from 'firebase/firestore';
 import { checkAuth } from './auth.js';
 
 document.addEventListener('DOMContentLoaded', async () => {

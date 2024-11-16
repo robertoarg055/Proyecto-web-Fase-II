@@ -1,7 +1,6 @@
-
-import { initializeApp } from './firebase/app.js';
-import { getAuth } from './firebase/auth.js';
-import { getFirestore } from './firebase/firestore.js';
+import { signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js';
+import { doc, getDoc } from 'https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js';
+import { auth, db } from './firebase.js';
 
 export async function handleLogin(email, password, role) {
     try {
