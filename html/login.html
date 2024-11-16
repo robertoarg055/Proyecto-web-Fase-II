@@ -31,17 +31,17 @@
             <button class="tab-btn" onclick="showLogin('maestros')">Maestros</button>
             <button class="tab-btn" onclick="showLogin('admin')">Admin</button>
         </div>
-        <form id="login-estudiantes" class="login-form" action="login.php" method="post">
+        <form id="login-estudiantes" class="login-form" action="login.html" method="post">
             <input type="text" name="username" placeholder="Usuario" required>
             <input type="password" name="password" placeholder="Contraseña" required>
             <button type="submit">Ingresar</button>
         </form>
-        <form id="login-maestros" class="login-form hidden" action="login_maestros.php" method="post">
+        <form id="login-maestros" class="login-form hidden" action="profesor.html" method="post">
             <input type="text" name="username" placeholder="Usuario" required>
             <input type="password" name="password" placeholder="Contraseña" required>
             <button type="submit">Ingresar</button>
         </form>
-        <form id="login-admin" class="login-form hidden" action="login_admin.php" method="post">
+        <form id="login-admin" class="login-form hidden" action="admin_cursos.html" method="post">
             <input type="text" name="username" placeholder="Usuario" required>
             <input type="password" name="password" placeholder="Contraseña" required>
             <button type="submit">Ingresar</button>

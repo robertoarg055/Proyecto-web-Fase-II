@@ -1,5 +1,5 @@
 import { db } from './firebase.js';
-import { collection, addDoc, getDocs, updateDoc, deleteDoc, doc } from 'firebase/firestore';
+import { collection, addDoc, getDocs, deleteDoc, doc } from './firebase/firestore.js';
 import { checkAuth } from './auth.js';
 
 document.addEventListener('DOMContentLoaded', async () => {

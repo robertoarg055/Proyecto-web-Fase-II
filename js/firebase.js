@@ -1,7 +1,8 @@
-// Firebase configuration and initialization
-import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
+
+
+import { auth, db } from './firebase.js';
+import { signInWithEmailAndPassword } from './auth.js';
+import { doc, getDoc } from './firebase/firestore.js';
 
 const firebaseConfig = {
     apiKey: "AIzaSyCXE5rtFVsDQAIBQm9gMSblMt6X5wAHjGo",

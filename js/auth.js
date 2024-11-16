@@ -1,6 +1,7 @@
-import { auth, db } from './firebase.js';
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import { doc, getDoc } from 'firebase/firestore';
+
+import { initializeApp } from './firebase/app.js';
+import { getAuth } from './firebase/auth.js';
+import { getFirestore } from './firebase/firestore.js';
 
 export async function handleLogin(email, password, role) {
     try {
@@ -17,13 +18,13 @@ export async function handleLogin(email, password, role) {
 
         switch (role) {
             case 'admin':
-                window.location.href = '/html/admin_dashboard.html';
+                window.location.href = '../html/admin_cursos.html';
                 break;
             case 'teacher':
-                window.location.href = '/html/teacher_dashboard.html';
+                window.location.href = '../html/profesor.html';
                 break;
             case 'student':
-                window.location.href = '/html/student_dashboard.html';
+                window.location.href = '../html/estudiante.html';
                 break;
         }
     } catch (error) {

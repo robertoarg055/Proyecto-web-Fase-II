@@ -1,6 +1,6 @@
-import { db } from './firebase.js';
+import { db } from 'firebase.js';
 import { collection, query, where, getDocs } from 'firebase/firestore';
-import { checkAuth } from './auth.js';
+import { checkAuth } from 'auth.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
     if (!checkAuth() || localStorage.getItem('userRole') !== 'student') {
